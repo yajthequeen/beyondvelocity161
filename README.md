@@ -36,7 +36,15 @@ ABOUT HTML FILES
 The developer of this website used bootstrap, css, and basic html code. 
 https://getbootstrap.com/
 
+At the base of the website, users can see the contact details of the organization.
+
 COLORS AND FONT
 The color was inspired to the organization color scheme. The default font of the html was used.
 
+
 ----- This website is running at http://beyondvelocity.pythonanywhere.com/ as of June 28, 2021 | 8:30 AM
+
+The Developers and the Organization contact details.
+abrevilla@up.edu.ph
+acimbuido1@up.edu.ph 
+reach.beyondvelocity@gmail.com
