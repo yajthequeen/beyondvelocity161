@@ -98,7 +98,7 @@ def logout():
 def application():
     #Checks if user is logged in.
     #If they are logged in, they can access the form.
-    #If not logged in, redirects to login page
+    #If not, redirects to login page
     #Admin can view the applications on the masterlist
     if 'loggedin' in session:
         #Checks if the user has already filled out the form
@@ -180,7 +180,7 @@ def modify(email):
         delete_application(email)
         return redirect(url_for('application'))
 
-#Upon editing and confirmation of application's data, the values in the database must updated
+#Upon editing and confirmation of application's data, the values in the database must be updated
 @app.route('/update/<email>', methods=['POST'])
 def update(email):
     app_data = {
