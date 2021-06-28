@@ -42,7 +42,9 @@ COLORS AND FONT
 The color was inspired to the organization color scheme. The default font of the html was used.
 
 
------ This website is running at http://beyondvelocity.pythonanywhere.com/ as of June 28, 2021 | 8:30 AM
+----- This website is running at http://beyondvelocity.pythonanywhere.com/ as of June 28, 2021 | 9:30 AM.
+As of this writing the database has 129 accounts and 14 applications. The respondents for the were Beyond Velocity Followers. 
+We also asked them to give there experiences as they try our system. The bugs that we include here are some of the common user experiences.
 
 The Developers and the Organization contact details.
 abrevilla@up.edu.ph
