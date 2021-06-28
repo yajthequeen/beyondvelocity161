@@ -1,6 +1,6 @@
 import sqlite3
 
-db_path:('bv.db')
+db_path:('/home/beyondvelocity/beyondvelocity161/bv.db')
 
 # Connect to a database
 def connect_db(path):
