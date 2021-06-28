@@ -11,7 +11,7 @@ def connect_db(path):
 
 # Insert New Account Data to DB
 def insert_account(account_data):
-    conn, cur = connect_db('bv.db')
+    conn, cur = connect_db('db_path')
     query = 'INSERT INTO accounts (email, password, type) VALUES (?,?,?)'
     values = (account_data['email'],
               account_data['password'],
@@ -22,7 +22,7 @@ def insert_account(account_data):
 
 # Checks if login credentials exist in the Database
 def login_account(email, password):
-    conn, cur = connect_db('bv.db')
+    conn, cur = connect_db('db_path')
     query = 'SELECT *  FROM accounts WHERE email=? AND password=?'
     result = cur.execute(query, (email, password))
     row = cur.fetchone()
@@ -34,7 +34,7 @@ def login_account(email, password):
 
 # Checks if provided email is in the database
 def check_dupe(email):
-    conn, cur = connect_db('bv.db')
+    conn, cur = connect_db('db_path')
     query = 'SELECT *  FROM accounts WHERE email=?'
     result = cur.execute(query, (email,))
     row = cur.fetchone()
@@ -46,7 +46,7 @@ def check_dupe(email):
 
 # Input an application based on the email
 def check_application(email):
-    conn, cur = connect_db('bv.db')
+    conn, cur = connect_db('db_path')
     query = 'SELECT *  FROM applications WHERE email=?'
     results = cur.execute(query, (email,)).fetchone()
     conn.close()
@@ -57,7 +57,7 @@ def check_application(email):
 
 # Input an application based on the id
 def read_app_by_id(appid):
-    conn, cur = connect_db('bv.db')
+    conn, cur = connect_db('db_path')
     query = 'SELECT * FROM applications WHERE id=?'
     results = cur.execute(query, (appid,)).fetchone()
     conn.close()
@@ -65,7 +65,7 @@ def read_app_by_id(appid):
 
 # Insert New Application Data to Database
 def insert_application(app_data):
-    conn, cur = connect_db('bv.db')
+    conn, cur = connect_db('db_path')
     query = 'INSERT INTO applications (firstname, lastname, sex, civil, birthdate, birthplace, age, citizenship, religion, mobile, street1, street2, city, state, country, url, apptype, advocacy, email) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)'
     values = (app_data['firstname'],
               app_data['lastname'],
@@ -93,7 +93,7 @@ def insert_application(app_data):
 
 # all applications data
 def retreive_masterlist():
-    conn, cur = connect_db('bv.db')
+    conn, cur = connect_db('db_path')
     query = 'SELECT * FROM applications'
     results = cur.execute(query).fetchall()
     conn.close()
@@ -101,7 +101,7 @@ def retreive_masterlist():
 
 # Delete an application
 def delete_application(email):
-    conn, cur = connect_db('bv.db')
+    conn, cur = connect_db('db_path')
     query = 'DELETE FROM applications WHERE email=?'
     cur.execute(query, (email,))
     conn.commit()
@@ -109,7 +109,7 @@ def delete_application(email):
 
 # Update application data
 def update_application(app_data):
-    conn, cur = connect_db('bv.db')
+    conn, cur = connect_db('db_path')
     query = 'UPDATE applications SET firstname=?, lastname=?, sex=?, civil=?, birthdate=?, birthplace=?, age=?, citizenship=?, religion=?,  mobile=?, street1=?, street2=?, city=?, state=?, country=?, url=?, apptype=?, advocacy=?, WHERE email=?'
     values = (app_data['firstname'],
               app_data['lastname'],
@@ -137,7 +137,7 @@ def update_application(app_data):
 
 # Match searches based on query
 def field_search(field, search):
-    conn, cur = connect_db('bv.db')
+    conn, cur = connect_db('db_path')
     if field == 'firstname':
         query = 'SELECT * FROM applications WHERE firstname=?'
     elif field == 'lastname':
