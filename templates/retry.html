@@ -1,0 +1,38 @@
+<!--Login Page if login credentials is unsuccessful-->
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<!-- Page Title -->
+<div class="container">
+<h1 style="color:Black>Login Portal</h1>
+    <div class="alert alert-danger" role="alert">
+        Unsuccessful login. Please check your login credentials! Contact us if you find this a mistake.
+    </div>
+</div>
+
+
+
+<!-- Email and Password -->
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form action="{{ url_for('signin') }}" method="POST">
+                  <div class="form-floating mb-3">
+                      <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" aria-describedby="emailHelp" required>
+                      <label for="email" class="form-label">Email Address</label>
+                      <div id="emailHelp" class="form-text">Check your characters! Make sure that this is valid.</div>
+                  </div>
+                  <div class="form-floating mb-3">
+                      <input type="password" class="form-control" id="password" name="password" placeholder="12345" aria-describedby="passwordHelp" required>
+                      <label for="password" class="form-label">Password</label>
+                    <div id="passwordHelp" class="form-text"><a href="">Forgot your password?</a></div>
+                  </div>
+                  <button type="submit" class="btn btn-success">LOG IN</button>
+            </form>
+            </div>
+    </div>
+</div>
+
+<br>
+{% endblock %}

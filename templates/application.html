@@ -1,0 +1,141 @@
+<!--This is the Application Form Page -->
+
+{% extends 'base.html' %}
+
+{% block contents %}
+
+<div class="container">
+    <h1 class="text-center" style="color:Black">Beyond Velocity PH Application Form</h1>
+    <br>
+    <div class="card">
+        <div class="card-body">
+            <form action="{{ url_for('apply') }}" method="POST" class="row g-3">
+                <h2 class="card-title">Personal Data</h2>
+
+                <div class="col-md-6">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" class="form-control" name="firstname" id="firstname" required>
+                </div>
+                <div class="col-md-6">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" class="form-control" name="lastname" id="lastname" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="sex" class="form-label">Sex assigned at birth</label>
+                    <select id="sex" name="sex" class="form-select" aria-label="gender" required>
+                        <option selected></option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                <label for="marital" class="form-label">Marital Status</label>
+                <select id="marital" name="marital" class="form-select" required>
+                    <option selected></option>
+                    <option value="Single">Single</option>
+                    <option value="Married">Married</option>
+                    <option value="Widowed">Widowed</option>
+                    <option value="Separated">Separated</option>
+                </select>
+              </div>
+
+                <div class="col-md-2">
+                    <label for="birthdate" class="form-label">Date of Birth</label>
+                    <input id="birthdate" name="birthdate" type="text" class="form-control" placeholder ="mm-dd-yyyy" required>
+                </div>
+                <div class="col-md-4">
+                    <label for="birthplace" class="form-label">Place of Birth</label>
+                    <input id="birthplace" name="birthplace" type="text" class="form-control" required>
+                </div>
+                <div class="col-md-2">
+                    <label for="age" class="form-label">Age</label>
+                    <input id="age" name="age" type="text" class="form-control" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="citizen" class="form-label">Country of Citizenship</label>
+                    <input id="citizen" name="citizen" type="text" class="form-control" required>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="religion" class="form-label">Religion</label>
+                    <input id="religion" name="religion" type="text" class="form-control" required>
+                </div>
+
+                <div class="col-md-3"?>
+                    <label for="mobilephone" class="form-label">Mobile Number</label>
+                    <input id="mobilephone" name="mobilephone" type="number" class="form-control" required>
+                </div>
+
+                <div class="col-12">
+                <label for="street1" class="form-label">Street Address</label>
+                <input id="street1" name="street1" type="text" class="form-control" placeholder="08 Main St" required>
+              </div>
+                <div class="col-12">
+                <label for="street2" class="form-label">Street Address 2</label>
+                <input id="street2" name="street2" type="text" class="form-control"  placeholder="Neighborhood, village, Barangay etc." required>
+              </div>
+                <div class="col-md-3">
+                <label for="city" class="form-label">City</label>
+                <input id="city" name="city" type="text" class="form-control" required>
+              </div>
+                <div class="col-md-3">
+                <label for="state" class="form-label">State/Province</label>
+                <input id="state" name="state" type="text" class="form-control" placeholder="i.e.Bicol,NCR," required>
+              </div>
+                <div class="col-md-3">
+                    <label for="country" class="form-label">Country</label>
+                    <input id="country" name="country" type="text" class="form-control" required>
+              </div>
+                <div class="col-md-12">
+                    <label for="imageurl" class="form-label">Image</label>
+                    <input id="imageurl" name="imageurl" type="url" class="form-control" placeholder="Kindly link your recent image. Save it to google drive! (Make sure that the link is for anyone.)" required>
+                </div>
+
+                <br>
+
+                <h2 class="card-title">Application Information</h2>
+
+                <div class="col-md-3">
+                    <label for="applicationtype" class="form-label">Application Type</label>
+                    <select id="applicationtype" name="applicationtype" class="form-select" required>
+                        <option selected></option>
+                        <option value="New">New Member</option>
+                        <option value="Renew">Membership Renewal</option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="advocacy" class="form-label">Choose your Main Advocacy!</label>
+                    <select id="advocacy" name="advocacy" class="form-select" required>
+                        <option selected></option>
+                        <option value="UYouth">One United Youth Advocate</option>
+                        <option value="EnviAm">Environmental and Animal Welfare Advocate</option>
+                        <option value="Info">Media and Information Literacy Advocate</option>
+                        <option value="MH">Mental Health Advocate</option>
+                        <option value="Eduk">Education for All Advocate</option>
+                        <option value="ChildOld">Children and Elderly Advocate</option>
+                        <option value="MusicArts">The Music and the Arts Advocate</option>
+                        <option value="GenHealth">General and Public Health Advocate</option>
+                        <option value="STEM"> Science, Technology, Engineering, and Mathematics Advocate</option>
+                        <option value="ABM"> Accountancy, Business, and Management Advocate</option>
+                        <option value="HUMSS"> Humanities and Social Science Advocate</option>
+                        <option value="Sports"> Sports Advocate</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<br>
+
+
+
+{% endblock %}

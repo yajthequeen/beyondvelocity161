@@ -1,0 +1,63 @@
+<!--Search function of the system-->
+
+{% extends 'base.html' %}
+
+{% block contents %}
+<div class="container">
+    <h1 class="text-center" style="color:Black">Beyond Velocity Membership Master List</h1>
+
+    <br>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{  url_for('masterlist') }}">Back</a></li>
+  </ol>
+</nav>
+
+
+    <form action="{{ url_for('fieldsearch') }}" method="POST" class="row g-3">
+        <div class="col-md-2">
+            <select id="field" name="field" class="form-select" required>
+                <option selected disabled value="">Select a Field</option>
+                <option value="firstname">First Name</option>
+                <option value="lastname">Last Name</option>
+                <option value="sex">Sex</option>
+                <option value="civil">Civil</option>
+                <option value="birthdate">Birthdate</option>
+                <option value="birthplace">Birthplace</option>
+                <option value="citizenship">Citizenship</option>
+                <option value="religion">Religion</option>
+                <option value="mobile">Mobile</option>
+                <option value="city">City</option>
+                <option value="state">State/Province</option>
+                <option value="country">Country</option>
+                <option value="apptype">Application Type</option>
+                <option value="advocacy">Advocacy</option>
+                <option value="age">Age</option>
+                <option value="email">Email</option>
+            </select>
+        </div>
+      <div class="col-md-9">
+        <label for="search" class="visually-hidden">Search</label>
+        <input id="search" name="search" type="text" class="form-control" placeholder="Input Value">
+      </div>
+      <div class="col-md-1">
+        <button type="submit" class="btn btn-success mb-3">Search</button>
+      </div>
+    </form>
+
+
+    <div class="card">
+        <div class="card-body">
+            <ul>
+                {% for application in applications %}
+                <li><a href="{{ url_for('adminview', appid = application.id) }}">{{ application.firstname }} {{ application.lastname}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+
+<br>
+
+{% endblock %}
