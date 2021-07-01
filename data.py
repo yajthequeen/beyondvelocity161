@@ -135,7 +135,7 @@ def update_application(app_data):
     conn.commit()
     conn.close()
 
-# Match searches based on query
+# Match searches based on users query
 def field_search(field, search):
     conn, cur = connect_db('db_path')
     if field == 'firstname':
