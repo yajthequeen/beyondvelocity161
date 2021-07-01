@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 app.secret_key = 'watubs'
 
-#----------------------------------------Fundamental Display Pages---------------------------------------------------------- #
+#Fundamental Display Pages
 
 #Homepage Display
 @app.route('/')
@@ -39,7 +39,7 @@ def dupe():
 
 
 
-#----------------------------------------- Handling Functions of the System ---------------------------------------------------#
+# Handling Functions of the System 
 
 #Input account credentials into the account database
 @app.route('/creating', methods=['POST'])
@@ -90,7 +90,7 @@ def logout():
    return redirect(url_for('home'))
 
 
-#-------------------------------------------Membership Application Form-----------------------------------------------------------#
+#Membership Application Form
 
 #Application form Page
 @app.route("/application/<email>")
@@ -142,7 +142,7 @@ def apply():
     return redirect(url_for('application'))
 
 
-#----------------------------------------Viewing of the Membership Application Forms--------------------------------------------------------#
+#Viewing of the Membership Application Forms
 
 #Retreives all membership form from the database and renders the masterlist of applicants
 @app.route('/masterlist')
@@ -168,7 +168,7 @@ def fieldsearch():
         return render_template('searchtoML.html', applications=result)
 
 
-#----------------------------------------Editing the Application Forms--------------------------------------------------------#
+#Editing the Application Forms
 
 #Receives application data, redirects user to the application's edit page or deletes section.
 @app.route('/modify/<email>', methods=['POST'])
