@@ -17,7 +17,8 @@ FUNCTIONALITIES OF THIS WEBSITE
 
 Bugs:
 1. Task manager task is under maintenance.
-2. After the registration, users will be redirected to homepage without a notice if his/her account was registered. [ Solution of the developer: Set an instruction to the homepage on how to register]
+2. After the registration, users will be redirected to homepage without a notice if his/her account was registered. 
+3. [ Solution of the developer: Set an instruction to the homepage on how to register]
 
 SECURITY OF THIS WEBSITE
 1. User and admin can create an account with password.
@@ -36,12 +37,14 @@ Bug
 3. Sometimes, the server encountered an internal error in processing data.
 
 ABOUT HTML FILES
+
 The developer of this website used bootstrap, css, and basic html code. 
 https://getbootstrap.com/
 
 At the base of the website, users can see the contact details of the organization.
 
 COLORS AND FONT
+
 The color was inspired to the organization color scheme. The default font of the html was used.
 
 
